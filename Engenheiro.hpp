@@ -6,6 +6,9 @@ class Engenheiro : public Empregado {
     int _projetos;
 
   public:
+    Engenheiro(std::string nome, double salarioHora, int projetos) :
+      Empregado(nome, salarioHora), _projetos(projetos) {};
+
     int getProjetos();
     void setProjetos(const int& projetos);
 
