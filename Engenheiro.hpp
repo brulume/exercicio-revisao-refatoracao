@@ -2,7 +2,11 @@
 
 class Engenheiro : public Empregado {
 
+  private:
+    int _projetos;
+
   public:
-    int projetos;
+    int getProjetos();
+    void setProjetos(const int& projetos);
 
 };

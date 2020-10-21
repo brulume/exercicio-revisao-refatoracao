@@ -1,5 +1,13 @@
 #include "Vendedor.hpp"
 
 double Vendedor::quotaTotalAnual() {
-  return quotaMensalVendas * 12;
+  return this->_quotaMensalVendas * 12;
+}
+
+double Vendedor::getQuotaMensalVendas() {
+  return this->_quotaMensalVendas;
+}
+
+void Vendedor::setQuotaMensalVendas(const double& quotaMensalVendas) {
+  this->_quotaMensalVendas = quotaMensalVendas;
 }
