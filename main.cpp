@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "Engenheiro.cpp"
+#include "Engenheiro.hpp"
 #include "Vendedor.hpp"
 
 int main() {
