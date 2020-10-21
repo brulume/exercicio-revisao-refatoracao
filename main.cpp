@@ -1,51 +1,59 @@
 #include <iostream>
+#include <vector>
 
 #include "Engenheiro.hpp"
 #include "Vendedor.hpp"
 
+void printEmpregado(Empregado& emp, double horasTrabalhadas) {
+  std::cout << "Nome: " << emp.getNome() << std::endl;
+  std::cout << "Salario Mes: " << emp.pagamentoMes(horasTrabalhadas) << std::endl;
+}
+
+void printEngenheiro(Engenheiro& eng, double horasTrabalhadas) {
+  printEmpregado(eng, horasTrabalhadas);
+  std::cout << "Projetos: " << eng.getProjetos() << std::endl;
+  std::cout << std::endl;
+}
+
+void printVendedor(Vendedor& vend, double horasTrabalhadas) {
+  printEmpregado(vend, horasTrabalhadas);
+  std::cout << "Quota vendas: " << vend.quotaTotalAnual() << std::endl;
+  //std::cout << std::endl;
+}
+
 int main() {
 
-  Engenheiro eng1 ("Joao Snow", 35, 3);
+  std::vector<Engenheiro> engenheiro;
+  
+  Engenheiro eng("Joao Snow", 35, 3);
+  engenheiro.push_back(eng);
+  printEngenheiro(engenheiro[0], 9.5);
 
-  std::cout << "Nome: " << eng1.getNome() << std::endl;
-  std::cout << "Salario Mes: " << eng1.pagamentoMes(9.5) << std::endl;
-  std::cout << "Projetos: " << eng1.getProjetos() << std::endl;
-  std::cout << std::endl;
-  
-  Engenheiro eng2("Daniela Targaryen", 30, 1);
+  eng = Engenheiro("Daniela Targaryen", 30, 1);
+  engenheiro.push_back(eng);
+  printEngenheiro(engenheiro[1], 8);
 
-  std::cout << "Nome: " << eng2.getNome() << std::endl;
-  std::cout << "Salario Mes: " << eng2.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng2.getProjetos() << std::endl;
-  std::cout << std::endl;
+  eng = Engenheiro("Bruno Stark", 30, 2);
+  engenheiro.push_back(eng);
+  printEngenheiro(engenheiro[2], 8);
   
-  Engenheiro eng3("Bruno Stark", 30, 2);
 
-  std::cout << "Nome: " << eng3.getNome() << std::endl;
-  std::cout << "Salario Mes: " << eng3.pagamentoMes(8) << std::endl;
-  std::cout << "Projetos: " << eng3.getProjetos() << std::endl;
+  std::vector<Vendedor> vendedor;
+  Vendedor vend("Tonho Lannister", 20, 5000);
+  vendedor.push_back(vend);
+  printVendedor(vendedor[0], 6);
+
   std::cout << std::endl;
   
+  vend = Vendedor("Jose Mormont", 25, 3000);
+  vendedor.push_back(vend);
+  printVendedor(vendedor[1], 8);
   
-  Vendedor vend1("Tonho Lannister", 20, 5000);
-  
-  std::cout << "Nome: " << vend1.getNome() << std::endl;
-  std::cout << "Salario Mes: " << vend1.pagamentoMes(6) << std::endl;
-  std::cout << "Quota vendas: " << vend1.quotaTotalAnual() << std::endl;
-  std::cout << std::endl;
-  
-  Vendedor vend2("Jose Mormont", 25, 3000);
-  
-  std::cout << "Nome: " << vend2.getNome() << std::endl;
-  std::cout << "Salario Mes: " << vend2.pagamentoMes(8) << std::endl;
-  std::cout << "Quota vendas: " << vend2.quotaTotalAnual() << std::endl;
   std::cout << std::endl;
 	
-  Vendedor vend3("Sonia Stark", 30, 4000);
-  
-  std::cout << "Nome: " << vend3.getNome() << std::endl;
-  std::cout << "Salario Mes: " << vend3.pagamentoMes(8) << std::endl;
-  std::cout << "Quota vendas: " << vend3.quotaTotalAnual() << std::endl;
+  vend = Vendedor("Sonia Stark", 30, 4000);
+  vendedor.push_back(vend);
+  printVendedor(vendedor[2], 8);
   
   return 0;
 }

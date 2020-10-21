@@ -10,7 +10,7 @@ class Empregado {
     double _salarioHora;
 
   public:
-
+    Empregado();
     Empregado (std::string nome, double salarioHora) : _nome(nome), _salarioHora(salarioHora) {};
 
     /* Calcula hora extra adicionando 50% caso sejam maiores que 8 h.
