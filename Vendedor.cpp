@@ -1,11 +1,5 @@
-#include <string>
-#include "Empregado.hpp"
+#include "Vendedor.hpp"
 
-class Vendedor : public Empregado {
-  public:
-    double quotaMensalVendas;
-
-    double quotaTotalAnual() {
-      return quotaMensalVendas * 12;
-    }
-};
+double Vendedor::quotaTotalAnual() {
+  return quotaMensalVendas * 12;
+}

@@ -1,7 +1,7 @@
 #include <iostream>
 
 #include "Engenheiro.cpp"
-#include "Vendedor.cpp"
+#include "Vendedor.hpp"
 
 int main() {
 
